@@ -2,6 +2,7 @@ package com.tenpo.challenge.api.utils;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.impl.TextCodec;
 import jakarta.annotation.PostConstruct;
 import org.apache.logging.log4j.util.Strings;
 import org.springframework.beans.factory.annotation.Value;
@@ -31,7 +32,7 @@ public class JwtUtil {
                    .setClaims(claims)
                    .setIssuedAt(dateNow)
                    .setExpiration(dateExpired)
-                   .signWith(SignatureAlgorithm.HS256, secret)
+                   .signWith(SignatureAlgorithm.HS256, TextCodec.BASE64.decode(secret))
                    .compact();
     }
 

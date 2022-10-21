@@ -4,14 +4,15 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import org.hibernate.annotations.UpdateTimestamp;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@Builder
+@Builder(toBuilder = true)
+@NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "users_login")
-public class Users {
+public class UserPersistence {
 
     @Id
     @GeneratedValue
@@ -28,7 +29,4 @@ public class Users {
 
     @Column(name = "last_token_api", nullable = false)
     private String lastTokenApi;
-
-    public Users(){
-    }
 }

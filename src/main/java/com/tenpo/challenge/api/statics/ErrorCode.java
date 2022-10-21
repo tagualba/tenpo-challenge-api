@@ -8,8 +8,9 @@ public enum ErrorCode {
     REPEAT_EMAIL(1002, "Repeat Email", HttpStatus.BAD_REQUEST),
     INVALID_TOKEN(1003, "Invalid Token Access", HttpStatus.UNAUTHORIZED),
     EXPIRED_TOKEN(1004, "Token Expired ", HttpStatus.UNAUTHORIZED),
-    COMBINATION_FAIL(1005, "Invalid Combination", HttpStatus.NOT_FOUND);
+    COMBINATION_FAIL(1005, "Invalid Combination", HttpStatus.NOT_FOUND),
 
+    EXTERNAL_CLIENT_ERROR(4001, "External services fail", HttpStatus.INTERNAL_SERVER_ERROR);
     private final Integer code;
 
     private final String message;

@@ -32,7 +32,7 @@ public class UserController {
     public UserResponseDto login(@RequestBody UserRequestDto request)
             throws ValidationException {
         log.info(String.format("Event: %s - Request: %s", "createUser", request.toString()));
-        UserResponseDto response = userService.createUser(request);
+        UserResponseDto response = userService.login(request);
         log.info(String.format("Event: %s - Response: %s", "createUser", response.toString()));
         return response;
     }

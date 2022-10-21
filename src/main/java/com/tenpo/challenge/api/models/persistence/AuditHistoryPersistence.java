@@ -4,14 +4,13 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
 @Data
 @Builder
 @AllArgsConstructor
 @Table(name = "audit_history")
-public class AuditHistory {
+public class AuditHistoryPersistence {
     @Id
     @GeneratedValue
     private Long id;
@@ -28,6 +27,6 @@ public class AuditHistory {
     @Column(name = "response", nullable = false)
     private String response;
 
-    public AuditHistory(){
+    public AuditHistoryPersistence(){
     }
 }

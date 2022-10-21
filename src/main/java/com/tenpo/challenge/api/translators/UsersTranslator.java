@@ -3,7 +3,7 @@ package com.tenpo.challenge.api.translators;
 import com.tenpo.challenge.api.models.domain.User;
 import com.tenpo.challenge.api.models.dtos.UserRequestDto;
 import com.tenpo.challenge.api.models.dtos.UserResponseDto;
-import com.tenpo.challenge.api.models.persistence.Users;
+import com.tenpo.challenge.api.models.persistence.UserPersistence;
 import com.tenpo.challenge.api.utils.EncryptUtil;
 import org.springframework.stereotype.Component;
 
@@ -18,8 +18,8 @@ public class UsersTranslator {
                 .build();
     }
 
-    public Users toPersistence(User user){
-        return Users.builder()
+    public UserPersistence toPersistence(User user){
+        return UserPersistence.builder()
                 .name(user.getName())
                 .email(user.getEmail())
                 .hashPassword(user.getHashPassword())
@@ -27,16 +27,16 @@ public class UsersTranslator {
                 .build();
     }
 
-    public User toDomain(Users usersPersistence){
+    public User toDomain(UserPersistence userPersistencePersistence){
         return User.builder()
-                .name(usersPersistence.getName())
-                .email(usersPersistence.getEmail())
-                .hashPassword(usersPersistence.getHashPassword())
-                .lastTokenApi(usersPersistence.getLastTokenApi())
+                .name(userPersistencePersistence.getName())
+                .email(userPersistencePersistence.getEmail())
+                .hashPassword(userPersistencePersistence.getHashPassword())
+                .lastTokenApi(userPersistencePersistence.getLastTokenApi())
                 .build();
     }
 
-    public UserResponseDto toResponse(Users user){
+    public UserResponseDto toResponse(UserPersistence user){
         return UserResponseDto.builder()
                 .id(user.getId())
                 .tokenApiKey(user.getLastTokenApi())

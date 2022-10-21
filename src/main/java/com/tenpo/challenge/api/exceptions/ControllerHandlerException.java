@@ -37,7 +37,7 @@ public class ControllerHandlerException {
         ApiError apiError = ApiError.builder()
                 .error(errorCode.getName())
                 .errorCode(errorCode.getCode())
-                .message(errorCode.getMessage())
+                .message(ex.getMessage())
                 .status(errorCode.getHttpStatus().value())
                 .build();
 

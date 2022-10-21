@@ -4,10 +4,12 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Builder
-@JsonDeserialize(builder = UserRequestDto.UserRequestDtoBuilder.class)
+@NoArgsConstructor
+@AllArgsConstructor
 public class UserRequestDto {
 
     private String name;

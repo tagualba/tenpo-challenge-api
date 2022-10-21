@@ -36,7 +36,7 @@ public class UsersTranslator {
                 .build();
     }
 
-    public UserResponseDto toResponse(User user){
+    public UserResponseDto toResponse(Users user){
         return UserResponseDto.builder()
                 .id(user.getId())
                 .tokenApiKey(user.getLastTokenApi())

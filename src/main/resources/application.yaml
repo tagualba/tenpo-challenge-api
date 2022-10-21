@@ -16,3 +16,10 @@ jwt:
 regex:
   email: ^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$
   password: ^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=.])(?=\S+$).{8,}$
+
+percentage-service:
+  cache:
+    ttl: 1800000
+  read-timeout: 40
+  connection-timeout: 40
+  url: http://localhost:8080/tenpo/percentage
